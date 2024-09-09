@@ -1,0 +1,9 @@
+.li{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+}
