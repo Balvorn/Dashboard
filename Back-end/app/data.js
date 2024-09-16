@@ -1,6 +1,5 @@
 const USER_MAIN_DATA = [
     {
-        kebab:12,
         id: 12,
         userInfos: {
             firstName: 'Karl',

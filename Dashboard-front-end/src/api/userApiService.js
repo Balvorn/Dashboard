@@ -1,7 +1,7 @@
 
 export const getUserData = async (id,endpoint = "") =>{
   const BaseUrl = `http://localhost:3000/user/`
-  const url = BaseUrl+id+endpoint;
+  const url = `${BaseUrl+id}/${endpoint}`;
 
   try {
     const response = await fetch(url);
