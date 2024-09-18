@@ -20,16 +20,16 @@ export default function Nav() {
                 <nav>
                     <ul>
                         <li className="red">
-                            <a href="*">Accueil</a>
+                            <a href="#">Accueil</a>
                         </li>
                         <li>
-                            <a href="*">Profil</a>
+                            <a href="#">Profil</a>
                         </li>
                         <li>
-                            <a href="*">Réglage</a>
+                            <a href="#">Réglage</a>
                         </li>
                         <li>
-                            <a href="*">Communauté</a>
+                            <a href="#">Communauté</a>
                         </li>
                     </ul>
                 </nav>

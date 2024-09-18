@@ -12,5 +12,6 @@ export const getUserData = async (id,endpoint = "") =>{
     return json
   } catch (error) {
     console.error(error.message);
+    throw error
   }
 }
