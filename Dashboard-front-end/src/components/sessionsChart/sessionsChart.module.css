@@ -1,4 +1,4 @@
-.customTooltip{
+.customTooltip {
     height: 80px;
     width: 55px;
     background-color: #E60000;
@@ -8,7 +8,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 25% 0;
+
     p{
         font-size: 12px !important;
     }
 }
+
+.text {
+    font-size: 24px;
+    margin-top: 20px;
+}
+

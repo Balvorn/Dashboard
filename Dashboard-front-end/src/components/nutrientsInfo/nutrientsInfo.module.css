@@ -1,0 +1,28 @@
+.li {
+    width: 258px;
+    height: 124px;
+    padding: 30px;
+    background-color: rgba(251, 251, 251, 1);
+    border-radius: 5px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    img{
+        padding: 20px;
+        margin-right: 24px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .amount{
+        font-size: 20px;
+        font-weight: 700;
+        color: rgba(40, 45, 48, 1);
+    }
+    .unit{
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(116, 121, 140, 1);
+    }
+}

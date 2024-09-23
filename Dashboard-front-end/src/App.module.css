@@ -18,6 +18,30 @@ main {
         }
     }
     .charts{
-        
+        margin-top: 60px;
+        display: flex;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        grid-template-rows: 330px 263px;
+        .sessions{
+            
+            padding: 30px;
+            background-color: rgba(251, 251, 251, 1);
+            font-weight: 500;
+            grid-column: 1 / 4;
+            grid-row: 1;
+
+        }
+        .nutrients{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items:center;
+            grid-column: 4;
+            grid-row: 1 / 3;
+        }
     }
 }

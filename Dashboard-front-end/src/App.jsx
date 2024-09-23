@@ -5,6 +5,19 @@ import './App.css'
 import styles from "./app.module.css"
 import Nav from './components/nav/nav';
 import SessionsChart from './components/sessionsChart/sessionsChart';
+import NutrientsInfo from './components/nutrientsInfo/nutrientsInfo';
+import { formatNutrients } from './formatData';
+import calories from './assets/calories.svg'
+import glucides from './assets/glucides.svg'
+import lipides from './assets/lipides.svg'
+import proteines from './assets/proteines.svg'
+
+const icons = [
+  { url: calories, color: "#FF00001A" },
+  { url: proteines, color: "#4AB8FF1A" },
+  { url: glucides, color: "#FDCC0C1A" },
+  { url: lipides, color: "#FD51811A" }
+]
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -19,7 +32,10 @@ const App = () => {
       try {
         const result = await getUserData(userId);
         if (!ignore) {
-          setData(result.data);
+          let data = result.data
+          data.keyData = formatNutrients(data.keyData)
+          setData(data);
+
         }
       } catch (e) {
         setError(e.message)
@@ -27,7 +43,6 @@ const App = () => {
     }
 
     fetchData();
-
     //clean up first fetch in dev env
     return () => {
       ignore = true;
@@ -43,12 +58,20 @@ const App = () => {
           <div className="error">
             Erreur lors du chargement des données : {error}
           </div>
-          :
+          : data &&
           <div className={styles.text}>
-            <h1>Bonjour <span>{data && data.userInfos.firstName}</span></h1>
+            <h1>Bonjour <span>{data.userInfos.firstName}</span></h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             <div className={styles.charts}>
-              <SessionsChart id={userId}></SessionsChart>
+
+              <div className={styles.sessions}>
+                <SessionsChart id={userId}></SessionsChart>
+              </div>
+              <ul className={styles.nutrients}>
+                {Object.entries(data.keyData).map((data, i) => {
+                  return <NutrientsInfo key={data} data={data} url={icons[i].url} color={icons[i].color}></NutrientsInfo>
+                })}
+              </ul>
             </div>
           </div>
         }
