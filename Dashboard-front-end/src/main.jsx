@@ -2,15 +2,22 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   createBrowserRouter,
+  Navigate,
   RouterProvider,
 } from "react-router-dom";
 import App from './App.jsx'
 import './index.css'
 
+
 const router = createBrowserRouter([
   {
-    path: "/:userId",
+    path: "/",
+    element: <Navigate to="/12" />,
+
+  },
+  {
     element: <App />,
+    path: "/:userId",
   },
 ]);
 

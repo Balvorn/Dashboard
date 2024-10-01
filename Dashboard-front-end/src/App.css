@@ -127,13 +127,24 @@ body,
 #root {
     height: 100%;
 }
+
 .recharts-cartesian-axis-tick-value {
-    fill: rgba(155, 158, 172, 1);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
+    fill: rgba(255, 255, 255, 0.5);
 }
 
 .recharts-legend-item-text {
+    font-size: 12px;
+}
+
+.sessions .recharts-cartesian-axis-tick-value {
+
+    fill: rgba(155, 158, 172, 1);
+    font-size: 14px;
+}
+
+.sessions .recharts-legend-item-text {
     color: rgba(116, 121, 140, 1) !important;
     font-size: 14px;
 }

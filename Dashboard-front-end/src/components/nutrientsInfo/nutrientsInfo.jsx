@@ -1,7 +1,6 @@
 import styles from "./nutrientsInfo.module.css"
 
 export default function NutrientsInfo({ url, data, color }) {
-    console.log(color)
     return (
         <li className={styles.li}>
             <img src={url} style={{ backgroundColor: color }} alt="icon" />

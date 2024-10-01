@@ -15,3 +15,15 @@ export function formatNutrients(data) {
         return ([k, v])
     }))
 }
+
+export function formatDay(data) {
+    const days = ["L", "M", "M", "J", "V", "S", "D"]
+    data.map((session, i) => session.day = days[i])
+}
+
+export function formatPerformance(performance) {
+    const frK = ["cardio", "énergie", "endurance", "force", "vitesse", "intensité"]
+    const kind = performance.kind
+    Object.keys(kind).map((k,i) => kind[k] = frK[i])
+    performance.data.map((obj, i) => obj.kind = kind[i+1])
+}

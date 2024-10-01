@@ -6,11 +6,13 @@ import styles from "./app.module.css"
 import Nav from './components/nav/nav';
 import SessionsChart from './components/sessionsChart/sessionsChart';
 import NutrientsInfo from './components/nutrientsInfo/nutrientsInfo';
+import LengthChart from './components/lenghtChart/lenghtChart';
 import { formatNutrients } from './formatData';
 import calories from './assets/calories.svg'
 import glucides from './assets/glucides.svg'
 import lipides from './assets/lipides.svg'
 import proteines from './assets/proteines.svg'
+import RadarInfo from './components/radarInfo/radarInfo';
 
 const icons = [
   { url: calories, color: "#FF00001A" },
@@ -19,6 +21,8 @@ const icons = [
   { url: lipides, color: "#FD51811A" }
 ]
 
+
+
 const App = () => {
   const [data, setData] = useState(null);
   let { userId } = useParams();
@@ -26,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     let ignore = false;
-
+    
     // Fetch data when the component mounts
     const fetchData = async () => {
       try {
@@ -35,7 +39,6 @@ const App = () => {
           let data = result.data
           data.keyData = formatNutrients(data.keyData)
           setData(data);
-
         }
       } catch (e) {
         setError(e.message)
@@ -64,7 +67,7 @@ const App = () => {
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             <div className={styles.charts}>
 
-              <div className={styles.sessions}>
+              <div className={styles.sessions + ' sessions'}>
                 <SessionsChart id={userId}></SessionsChart>
               </div>
               <ul className={styles.nutrients}>
@@ -72,6 +75,11 @@ const App = () => {
                   return <NutrientsInfo key={data} data={data} url={icons[i].url} color={icons[i].color}></NutrientsInfo>
                 })}
               </ul>
+              <div className={styles.length}>
+                <LengthChart id={userId}></LengthChart>
+              </div>
+              <div className={styles.performance}><RadarInfo id = {userId}/></div>
+              <div className={styles.score}><RadarInfo id = {userId}/></div>
             </div>
           </div>
         }

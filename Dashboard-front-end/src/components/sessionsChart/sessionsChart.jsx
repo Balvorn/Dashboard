@@ -44,11 +44,11 @@ export default function SessionsChart({ id }) {
     return (data &&
         <ResponsiveContainer width="100%" margin={{ top: 30, right: 30, left: 30, bottom: 30 }}>
             <BarChart height={270} barSize={10} barGap={10} data={data}>
-            <text x={0} y={22} fill="black" textAnchor="start" dominantBaseline="">
-            <tspan fontSize="20">Activité quotidienne</tspan>
+            <text x={0} y={20} fill="black" textAnchor="start" dominantBaseline="">
+            <tspan fontSize="15">Activité quotidienne</tspan>
         </text>
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
-                <XAxis padding={{ left: 15, right: 15 }} scale="point" tickMargin={15} tickLine={false} dataKey="day" name={data} />
+                <XAxis padding={{ left: 0, right: 0 }}  tickMargin={15} tickLine={false} dataKey="day" name={data} />
                 <YAxis tickMargin={35} tickLine={false} axisLine={false} orientation='right' yAxisId={"kgY"} domain={['dataMin -2', 'auto']} tickCount={3} dataKey="kilogram" />
                 <YAxis hide yAxisId={"kcalY"} tickCount={3} domain={[0, "dataMax+50"]} dataKey="calories" />
                 <Tooltip cursor={{ fill: "rgba(196, 196, 196, 0.5)" }} allowEscapeViewBox={{ x: true, y: true }} position={{ y: 40 }} offset={45} animationEasing="ease-in-out" content={<CustomTooltip />} />
