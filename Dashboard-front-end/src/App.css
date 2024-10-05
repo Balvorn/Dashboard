@@ -134,9 +134,6 @@ body,
     fill: rgba(255, 255, 255, 0.5);
 }
 
-.recharts-legend-item-text {
-    font-size: 12px;
-}
 
 .sessions .recharts-cartesian-axis-tick-value {
 
@@ -147,4 +144,10 @@ body,
 .sessions .recharts-legend-item-text {
     color: rgba(116, 121, 140, 1) !important;
     font-size: 14px;
+}
+
+@media(max-width : 1500px) {
+    .recharts-polar-angle-axis-tick .recharts-text{
+        font-size: 11px;
+    }
 }

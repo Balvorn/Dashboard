@@ -7,12 +7,13 @@ import Nav from './components/nav/nav';
 import SessionsChart from './components/sessionsChart/sessionsChart';
 import NutrientsInfo from './components/nutrientsInfo/nutrientsInfo';
 import LengthChart from './components/lenghtChart/lenghtChart';
-import { formatNutrients } from './formatData';
+import { formatNutrients, formatScore } from './formatData';
 import calories from './assets/calories.svg'
 import glucides from './assets/glucides.svg'
 import lipides from './assets/lipides.svg'
 import proteines from './assets/proteines.svg'
 import RadarInfo from './components/radarInfo/radarInfo';
+import ScoreChart from './components/scoreChart/scoreChart';
 
 const icons = [
   { url: calories, color: "#FF00001A" },
@@ -30,7 +31,7 @@ const App = () => {
 
   useEffect(() => {
     let ignore = false;
-    
+
     // Fetch data when the component mounts
     const fetchData = async () => {
       try {
@@ -38,6 +39,7 @@ const App = () => {
         if (!ignore) {
           let data = result.data
           data.keyData = formatNutrients(data.keyData)
+          data.todayScore = formatScore(data.todayScore ?? data.score)
           setData(data);
         }
       } catch (e) {
@@ -78,8 +80,8 @@ const App = () => {
               <div className={styles.length}>
                 <LengthChart id={userId}></LengthChart>
               </div>
-              <div className={styles.performance}><RadarInfo id = {userId}/></div>
-              <div className={styles.score}><RadarInfo id = {userId}/></div>
+              <div className={styles.performance}><RadarInfo id={userId} /></div>
+              <div className={styles.score}><ScoreChart score={data.todayScore} /></div>
             </div>
           </div>
         }

@@ -31,12 +31,13 @@ export default function RadarInfo({ id }) {
 
     const RenderPolarAngleAxis = ({ payload, x, y, cx, cy, ...rest }) => {
         return (
-            <Text
+            <Text className={styles.legend}
                 {...rest}
                 verticalAnchor="middle"
                 y={y + (y - cy) / 12}
                 x={x}
                 fontSize={14}
+                fontWeight={500}
                 fill= "white"
             >
                 {payload.value}

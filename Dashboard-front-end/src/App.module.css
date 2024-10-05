@@ -8,7 +8,7 @@ main {
     align-items: center;
 
     .text {
-        width: 90%;
+        width: 95%;
         height: 90%;
 
         h1 {
@@ -29,6 +29,7 @@ main {
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
         grid-template-rows: 330px 263px;
+        margin-bottom: 30px;
 
         .sessions {
             border-radius: 5px;
@@ -64,13 +65,19 @@ main {
             background-color: rgba(40, 45, 48, 1);
             border-radius: 5px;
         }
+        .score{
+            position: relative;
+            background-color: rgba(251, 251, 251, 1);
+            font-size: 16px;
+            font-weight: 500;
+        }
     }
 }
 
 @media(max-width : 1500px) {
     main {
         .charts {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr) 258px;
             grid-template-rows: 330px repeat(2, 263px);
             .sessions {
                 grid-column: 1 / 3;

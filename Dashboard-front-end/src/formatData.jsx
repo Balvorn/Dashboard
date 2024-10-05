@@ -22,8 +22,12 @@ export function formatDay(data) {
 }
 
 export function formatPerformance(performance) {
-    const frK = ["cardio", "énergie", "endurance", "force", "vitesse", "intensité"]
+    const frK = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"]
     const kind = performance.kind
-    Object.keys(kind).map((k,i) => kind[k] = frK[i])
-    performance.data.map((obj, i) => obj.kind = kind[i+1])
+    Object.keys(kind).map((k, i) => kind[k] = frK[i])
+    performance.data.map((obj, i) => obj.kind = kind[i + 1])
+}
+
+export function formatScore(score) {
+    return [{ name: "Score", value: score *= 100 }]
 }

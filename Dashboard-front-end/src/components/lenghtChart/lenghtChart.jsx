@@ -64,7 +64,7 @@ export default function LengthChart({ id }) {
                 <LineChart data={data}>
                     <defs>
                         <linearGradient id="colorUv" x1="0" y1="0" x2="100%" y2="0">
-                            <stop offset="50%" stopColor="#FFFF" stopOpacity={0.5} />
+                            <stop offset="40%" stopColor="#FFFF" stopOpacity={0.5} />
                             <stop offset="100%" stopColor="#FFFF" stopOpacity={1} />
                         </linearGradient>
                     </defs>
