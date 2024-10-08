@@ -14,7 +14,7 @@ export default function LengthChart({ id }) {
 
         // Fetch data when the component mounts
         const fetchData = async () => {
-            const result = await getUserData(id, "average-sessions");
+            const result = await getUserData(id, "average_sessions");
 
             if (!ignore) {
                 let sessions = result.data.sessions

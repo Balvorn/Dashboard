@@ -36,6 +36,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const result = await getUserData(userId);
+        
         if (!ignore) {
           let data = result.data
           data.keyData = formatNutrients(data.keyData)

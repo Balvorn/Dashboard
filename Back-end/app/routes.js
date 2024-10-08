@@ -31,7 +31,7 @@ router.get('/user/:id/activity', (req, res) => {
 })
 
 
-router.get('/user/:id/average-sessions', (req, res) => {
+router.get('/user/:id/average_sessions', (req, res) => {
     const userId = idx(req, _ => _.params.id)
     const userData = getUserAverageSession(Number(userId))
 

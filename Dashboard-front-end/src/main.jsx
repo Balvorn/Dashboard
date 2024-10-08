@@ -8,7 +8,6 @@ import {
 import App from './App.jsx'
 import './index.css'
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +21,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  <StrictMode>,
     <RouterProvider router={router} />
   </StrictMode>
 );
