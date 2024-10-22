@@ -28,6 +28,4 @@ export const getUserData = async (id, endpoint = "") => {
       throw error
     }
   }
-
-
 }

@@ -1,6 +1,6 @@
 import styles from "./lenghtChart.module.css"
 import { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Rectangle } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
 import { getUserData } from '../../api/userApiService'
 import { formatDay } from '../../formatData';
 import { curveNatural } from 'd3-shape';
@@ -8,15 +8,15 @@ import { curveNatural } from 'd3-shape';
 export default function LengthChart({ id }) {
 
     const [data, setData] = useState(null);
-
+    let ignore = false;
     useEffect(() => {
-        let ignore = false;
 
         // Fetch data when the component mounts
         const fetchData = async () => {
-            const result = await getUserData(id, "average_sessions");
 
             if (!ignore) {
+
+                const result = await getUserData(id, "average_sessions");
                 let sessions = result.data.sessions
                 formatDay(sessions)
                 setData(sessions)
@@ -46,15 +46,15 @@ export default function LengthChart({ id }) {
         const { points, width } = props;
         const { x, y } = points[0];
         return (
-          <Rectangle
-            fill="rgba(0, 0, 0, 0.1)"
-            stroke="rgba(0, 0, 0, 0.1)"
-            x={x}
-            width={width}
-            height={263}
-          />
+            <Rectangle
+                fill="rgba(0, 0, 0, 0.1)"
+                stroke="rgba(0, 0, 0, 0.1)"
+                x={x}
+                width={width}
+                height={263}
+            />
         );
-      };
+    };
 
     return (
         <>

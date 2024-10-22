@@ -22,22 +22,18 @@ const icons = [
   { url: lipides, color: "#FD51811A" }
 ]
 
-
-
 const App = () => {
   const [data, setData] = useState(null);
   let { userId } = useParams();
   const [error, setError] = useState(null)
-
+  let ignore = false;
   useEffect(() => {
-    let ignore = false;
 
     // Fetch data when the component mounts
     const fetchData = async () => {
       try {
-        const result = await getUserData(userId);
-        
         if (!ignore) {
+          const result = await getUserData(userId)
           let data = result.data
           data.keyData = formatNutrients(data.keyData)
           data.todayScore = formatScore(data.todayScore ?? data.score)

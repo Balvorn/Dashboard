@@ -6,13 +6,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from './App.jsx'
-import './index.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Navigate to="/12" />,
-
   },
   {
     element: <App />,
@@ -21,7 +19,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>,
+  <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>
 );

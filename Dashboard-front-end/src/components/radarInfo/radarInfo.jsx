@@ -8,14 +8,15 @@ import { formatPerformance } from "../../formatData";
 export default function RadarInfo({ id }) {
 
     const [data, setData] = useState(null);
-
+    let ignore = false;
     useEffect(() => {
-        let ignore = false;
+
 
         // Fetch data when the component mounts
         const fetchData = async () => {
-            const result = await getUserData(id, "performance");
+
             if (!ignore) {
+                const result = await getUserData(id, "performance");
                 let performance = result.data
                 formatPerformance(performance)
                 setData(performance)
@@ -38,7 +39,7 @@ export default function RadarInfo({ id }) {
                 x={x}
                 fontSize={14}
                 fontWeight={500}
-                fill= "white"
+                fill="white"
             >
                 {payload.value}
             </Text>

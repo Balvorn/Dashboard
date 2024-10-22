@@ -8,7 +8,6 @@ export default function NutrientsInfo({ url, data, color }) {
                 <div className={styles.amount}>{data[1]}</div>
                 <div className={styles.unit}>{data[0]}</div>
             </div>
-
         </li>
     )
 }
